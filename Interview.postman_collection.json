@@ -1,0 +1,258 @@
+{
+	"info": {
+		"_postman_id": "7c62a4ca-ecf4-45a2-a60f-5444ab1840ae",
+		"name": "Interview",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "31314187"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"admin@codesfortomorrow.com\",\r\n    \"password\": \"Admin123!@#\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{url}}/login"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "Add Category",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"categoryName\": \"testing\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{url}}/category"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Category",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": "{{url}}/category"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Category",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"categoryName\": \"testi\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{url}}/category/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Category",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": "{{url}}/category/3"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Service",
+			"item": [
+				{
+					"name": "Add Service",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"serviceName\": \"testing\",\r\n    \"type\": \"Normal\",\r\n    \"price\": [\r\n        {\r\n            \"price\": 10,\r\n            \"duration\": \"10\",\r\n            \"type\":\"hour\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{url}}/category/2/service"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All service of a category",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": "{{url}}/category/2/service"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Service",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"serviceName\": \"testing\",\r\n    \"type\": \"Normal\",\r\n    \"price\": [\r\n        {\r\n            \"price\": 10,\r\n            \"duration\": \"12\",\r\n            \"type\":\"hour\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{url}}/category/2/service/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete service",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": "{{url}}/category/2/service/5"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://127.0.0.1:5000",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyIwIjpbeyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbkBjb2Rlc2ZvcnRvbW9ycm93LmNvbSIsInBhc3N3b3JkIjoiQWRtaW4xMjMhQCMifV0sIjEiOlt7Il9idWYiOnsidHlwZSI6IkJ1ZmZlciIsImRhdGEiOlsxLDAsMCwxLDMsMzgsMCwwLDIsMywxMDAsMTAxLDEwMiw0LDExNiwxMDEsMTE1LDExNiw0LDExNywxMTUsMTAxLDExNCw0LDExNywxMTUsMTAxLDExNCwyLDEwNSwxMDAsMiwxMDUsMTAwLDEyLDYzLDAsMTAwLDAsMCwwLDgsMyw2NiwwLDAsMCw1MCwwLDAsMywzLDEwMCwxMDEsMTAyLDQsMTE2LDEwMSwxMTUsMTE2LDQsMTE3LDExNSwxMDEsMTE0LDQsMTE3LDExNSwxMDEsMTE0LDgsMTE3LDExNSwxMDEsMTE0LDExMCw5NywxMDksMTAxLDgsMTE3LDExNSwxMDEsMTE0LDExMCw5NywxMDksMTAxLDEyLDIyNCwwLDI1MiwyNTUsMywwLDI1MiwxNiwwLDAsMCwwLDUwLDAsMCw0LDMsMTAwLDEwMSwxMDIsNCwxMTYsMTAxLDExNSwxMTYsNCwxMTcsMTE1LDEwMSwxMTQsNCwxMTcsMTE1LDEwMSwxMTQsOCwxMTIsOTcsMTE1LDExNSwxMTksMTExLDExNCwxMDAsOCwxMTIsOTcsMTE1LDExNSwxMTksMTExLDExNCwxMDAsMTIsMjI0LDAsMjUyLDI1NSwzLDAsMjUyLDE2LDAsMCwwLDAsNSwwLDAsNSwyNTQsMCwwLDM0LDAsNDksMCwwLDYsMCwwLDEsMCwwLDAsMCwwLDAsMCwyNiw5NywxMDAsMTA5LDEwNSwxMTAsNjQsOTksMTExLDEwMCwxMDEsMTE1LDEwMiwxMTEsMTE0LDExNiwxMTEsMTA5LDExMSwxMTQsMTE0LDExMSwxMTksNDYsOTksMTExLDEwOSwxMSw2NSwxMDAsMTA5LDEwNSwxMTAsNDksNTAsNTEsMzMsNjQsMzUsNSwwLDAsNywyNTQsMCwwLDM0LDBdfSwiX2NsaWVudEVuY29kaW5nIjoidXRmOCIsIl9jYXRhbG9nTGVuZ3RoIjozLCJfY2F0YWxvZ1N0YXJ0IjoxMCwiX3NjaGVtYUxlbmd0aCI6NCwiX3NjaGVtYVN0YXJ0IjoxNCwiX3RhYmxlTGVuZ3RoIjo0LCJfdGFibGVTdGFydCI6MTksIl9vcmdUYWJsZUxlbmd0aCI6NCwiX29yZ1RhYmxlU3RhcnQiOjI0LCJfb3JnTmFtZUxlbmd0aCI6MiwiX29yZ05hbWVTdGFydCI6MzIsImNoYXJhY3RlclNldCI6NjMsImVuY29kaW5nIjoiYmluYXJ5IiwibmFtZSI6ImlkIiwiY29sdW1uTGVuZ3RoIjoxMDAsImNvbHVtblR5cGUiOjgsInR5cGUiOjgsImZsYWdzIjoxNjg5OSwiZGVjaW1hbHMiOjB9LHsiX2J1ZiI6eyJ0eXBlIjoiQnVmZmVyIiwiZGF0YSI6WzEsMCwwLDEsMywzOCwwLDAsMiwzLDEwMCwxMDEsMTAyLDQsMTE2LDEwMSwxMTUsMTE2LDQsMTE3LDExNSwxMDEsMTE0LDQsMTE3LDExNSwxMDEsMTE0LDIsMTA1LDEwMCwyLDEwNSwxMDAsMTIsNjMsMCwxMDAsMCwwLDAsOCwzLDY2LDAsMCwwLDUwLDAsMCwzLDMsMTAwLDEwMSwxMDIsNCwxMTYsMTAxLDExNSwxMTYsNCwxMTcsMTE1LDEwMSwxMTQsNCwxMTcsMTE1LDEwMSwxMTQsOCwxMTcsMTE1LDEwMSwxMTQsMTEwLDk3LDEwOSwxMDEsOCwxMTcsMTE1LDEwMSwxMTQsMTEwLDk3LDEwOSwxMDEsMTIsMjI0LDAsMjUyLDI1NSwzLDAsMjUyLDE2LDAsMCwwLDAsNTAsMCwwLDQsMywxMDAsMTAxLDEwMiw0LDExNiwxMDEsMTE1LDExNiw0LDExNywxMTUsMTAxLDExNCw0LDExNywxMTUsMTAxLDExNCw4LDExMiw5NywxMTUsMTE1LDExOSwxMTEsMTE0LDEwMCw4LDExMiw5NywxMTUsMTE1LDExOSwxMTEsMTE0LDEwMCwxMiwyMjQsMCwyNTIsMjU1LDMsMCwyNTIsMTYsMCwwLDAsMCw1LDAsMCw1LDI1NCwwLDAsMzQsMCw0OSwwLDAsNiwwLDAsMSwwLDAsMCwwLDAsMCwwLDI2LDk3LDEwMCwxMDksMTA1LDExMCw2NCw5OSwxMTEsMTAwLDEwMSwxMTUsMTAyLDExMSwxMTQsMTE2LDExMSwxMDksMTExLDExNCwxMTQsMTExLDExOSw0Niw5OSwxMTEsMTA5LDExLDY1LDEwMCwxMDksMTA1LDExMCw0OSw1MCw1MSwzMyw2NCwzNSw1LDAsMCw3LDI1NCwwLDAsMzQsMF19LCJfY2xpZW50RW5jb2RpbmciOiJ1dGY4IiwiX2NhdGFsb2dMZW5ndGgiOjMsIl9jYXRhbG9nU3RhcnQiOjUyLCJfc2NoZW1hTGVuZ3RoIjo0LCJfc2NoZW1hU3RhcnQiOjU2LCJfdGFibGVMZW5ndGgiOjQsIl90YWJsZVN0YXJ0Ijo2MSwiX29yZ1RhYmxlTGVuZ3RoIjo0LCJfb3JnVGFibGVTdGFydCI6NjYsIl9vcmdOYW1lTGVuZ3RoIjo4LCJfb3JnTmFtZVN0YXJ0Ijo4MCwiY2hhcmFjdGVyU2V0IjoyMjQsImVuY29kaW5nIjoidXRmOCIsIm5hbWUiOiJ1c2VybmFtZSIsImNvbHVtbkxlbmd0aCI6MjYyMTQwLCJjb2x1bW5UeXBlIjoyNTIsInR5cGUiOjI1MiwiZmxhZ3MiOjE2LCJkZWNpbWFscyI6MH0seyJfYnVmIjp7InR5cGUiOiJCdWZmZXIiLCJkYXRhIjpbMSwwLDAsMSwzLDM4LDAsMCwyLDMsMTAwLDEwMSwxMDIsNCwxMTYsMTAxLDExNSwxMTYsNCwxMTcsMTE1LDEwMSwxMTQsNCwxMTcsMTE1LDEwMSwxMTQsMiwxMDUsMTAwLDIsMTA1LDEwMCwxMiw2MywwLDEwMCwwLDAsMCw4LDMsNjYsMCwwLDAsNTAsMCwwLDMsMywxMDAsMTAxLDEwMiw0LDExNiwxMDEsMTE1LDExNiw0LDExNywxMTUsMTAxLDExNCw0LDExNywxMTUsMTAxLDExNCw4LDExNywxMTUsMTAxLDExNCwxMTAsOTcsMTA5LDEwMSw4LDExNywxMTUsMTAxLDExNCwxMTAsOTcsMTA5LDEwMSwxMiwyMjQsMCwyNTIsMjU1LDMsMCwyNTIsMTYsMCwwLDAsMCw1MCwwLDAsNCwzLDEwMCwxMDEsMTAyLDQsMTE2LDEwMSwxMTUsMTE2LDQsMTE3LDExNSwxMDEsMTE0LDQsMTE3LDExNSwxMDEsMTE0LDgsMTEyLDk3LDExNSwxMTUsMTE5LDExMSwxMTQsMTAwLDgsMTEyLDk3LDExNSwxMTUsMTE5LDExMSwxMTQsMTAwLDEyLDIyNCwwLDI1MiwyNTUsMywwLDI1MiwxNiwwLDAsMCwwLDUsMCwwLDUsMjU0LDAsMCwzNCwwLDQ5LDAsMCw2LDAsMCwxLDAsMCwwLDAsMCwwLDAsMjYsOTcsMTAwLDEwOSwxMDUsMTEwLDY0LDk5LDExMSwxMDAsMTAxLDExNSwxMDIsMTExLDExNCwxMTYsMTExLDEwOSwxMTEsMTE0LDExNCwxMTEsMTE5LDQ2LDk5LDExMSwxMDksMTEsNjUsMTAwLDEwOSwxMDUsMTEwLDQ5LDUwLDUxLDMzLDY0LDM1LDUsMCwwLDcsMjU0LDAsMCwzNCwwXX0sIl9jbGllbnRFbmNvZGluZyI6InV0ZjgiLCJfY2F0YWxvZ0xlbmd0aCI6MywiX2NhdGFsb2dTdGFydCI6MTA2LCJfc2NoZW1hTGVuZ3RoIjo0LCJfc2NoZW1hU3RhcnQiOjExMCwiX3RhYmxlTGVuZ3RoIjo0LCJfdGFibGVTdGFydCI6MTE1LCJfb3JnVGFibGVMZW5ndGgiOjQsIl9vcmdUYWJsZVN0YXJ0IjoxMjAsIl9vcmdOYW1lTGVuZ3RoIjo4LCJfb3JnTmFtZVN0YXJ0IjoxMzQsImNoYXJhY3RlclNldCI6MjI0LCJlbmNvZGluZyI6InV0ZjgiLCJuYW1lIjoicGFzc3dvcmQiLCJjb2x1bW5MZW5ndGgiOjI2MjE0MCwiY29sdW1uVHlwZSI6MjUyLCJ0eXBlIjoyNTIsImZsYWdzIjoxNiwiZGVjaW1hbHMiOjB9XSwiaWF0IjoxNzAwNTk3OTI5LCJleHAiOjE3MDkyMzc5Mjl9.1XaF6qi4qGlfsOYJ2oPUIVGJtpFeJadvX8Csv8puPzU",
+			"type": "string"
+		}
+	]
+}
